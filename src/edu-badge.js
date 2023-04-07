@@ -139,22 +139,28 @@ export class EduBadge extends LitElement {
 
   render() {
     return html`
-    <div class = "wrapper">   
-                    <div class="image">
-                        <img src=${this.image} class= "book-image">
-                    </div>
-                     <br>
-                    <div class= "creator">
-                        Badge Creator: ${this.creator}
-                    </div>
-                    <div class= "author">
-                        Badge Department: ${this.department}
-                    </div>
-                    <div class="title">
-                        Author Name: ${this.name}
-                    </div>
-            </div>
-        </div>
+    <div class="wrapper">
+    <div class="image">
+      <img class="book-image"     src="${this.image}"/>
+     </div>
+     
+     <div class="author">
+      
+     ${this.department}
+    
+     </div>
+
+     <div class="title">${this.name}
+     </div>
+
+     <div class="text">${this.creator}</div>
+  
+     <div class="data">
+       <div class="content">
+       </div>
+     </div> 
+  </div>
+ </div>
         `;
     }
 }
