@@ -1,8 +1,9 @@
 import { LitElement, html, css } from "lit";
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 
-
-export class Badge extends LitElement {
+export class EduBadge extends LitElement {
 
   static get properties() {
     return {
@@ -128,8 +129,6 @@ export class Badge extends LitElement {
     `;
   }
 
-  
-
   constructor() {
     super();
     this.name = "APA Style Citations:   Introduction";
@@ -140,27 +139,24 @@ export class Badge extends LitElement {
 
   render() {
     return html`
-       <div class="wrapper">
-    <div class="image">
-      <img class="book-image"     src="${this.image}"/>
-     </div>
-     
-     <div class="author">
-     ${this.department}
-     </div>
-
-     <div class="title">${this.name}</div>
-
-     <div class="text">${this.creator}</div>
-  
-     <div class="data">
-       <div class="content">
-       </div>
-     </div> 
-  </div>
- </div>
-    `;
-  }
+    <div class = "wrapper">   
+                    <div class="image">
+                        <img src=${this.image} class= "book-image">
+                    </div>
+                     <br>
+                    <div class= "creator">
+                        Badge Creator: ${this.creator}
+                    </div>
+                    <div class= "author">
+                        Badge Department: ${this.department}
+                    </div>
+                    <div class="title">
+                        Author Name: ${this.name}
+                    </div>
+            </div>
+        </div>
+        `;
+    }
 }
 
-customElements.define('edu-badge', Badge);
+customElements.define('edu-badge', EduBadge);

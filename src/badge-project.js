@@ -65,14 +65,16 @@ export class BadgeProject extends LitElement {
     <h2>${this.container}</h2>
     <search-widget @value-changed="${this._handleSearchEvent}"></search-widget>
       <div class="wrapper">
-        ${this.badges.map(
-          (badge) => html`
+        ${this.badges.map(badge => html`
             <div class="item">
-              <edu-badge name="${badge.name}" creator="${badge.creator}" image="${badge.image}" department="${badge.department}">
+              <edu-badge 
+              name="${badge.name}" 
+              creator="${badge.creator}" 
+              image="${badge.image}" 
+              department="${badge.department}">
               </edu-badge>
             </div>
-          `
-        )}
+          `)}
       </div>
     `;
   }
