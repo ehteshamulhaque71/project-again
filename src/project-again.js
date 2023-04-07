@@ -1,86 +1,165 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
-class ProjectAgain extends LitElement {
-  static properties = {
-    header: { type: String },
+export class ProjectAgain extends LitElement {
+  static get properties() {
+    return {
+      header: {type: String},
+      name: {type: String},
+      creator: {type: String},
+      department: {type: String},
+      image: {type: String},
+    }
+  
   }
 
   static styles = css`
-    :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--project-again-background-color);
-    }
+   .search-container {
+	background-color: #f2f2f2;
+	padding: 100px;
+  width: 70%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  
+}
 
-    main {
-      flex-grow: 1;
-    }
+.badges-container {
+  background-color: #f2f2f2;
+	padding: 100px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 
-    .logo {
-      margin-top: 36px;
-      animation: app-logo-spin infinite 20s linear;
-    }
+}
 
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+.explore-container {
+  width: 100%;
+  height: 100%;
+  background-color: #d3dce4;
+  display: flex;
+  flex-direction: column;
+  
+}
 
-    .app-footer {
-      font-size: calc(12px + 0.5vmin);
-      align-items: center;
-    }
+.explore-container h1 {
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  padding-left: 80px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #5b5a5a;
+}
 
-    .app-footer a {
-      margin-left: 5px;
-    }
-  `;
+.search-container input[type="text"] {
+	padding: 20px;
+	border: none;
+	background-color: #fff;
+	font-size: 16px;
+	width: 60%;
+  margin: 0 10px 0 0;
+}
 
-  constructor() {
-    super();
-    this.header = 'My app';
-  }
+.search-container button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.badges-container {
+	display: flex;
+	padding: 20px;
+  margin: auto;
+}
+
+.badge {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.badge:hover {
+	background-color: #3e8e41;
+}
+
+.search-text {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+header {
+  background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 18px;
+  font-style: und;
+  font-weight: bold;
+  color: #888;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  margin-right: 10px;
+  width: calc(100% - 120px);
+}
+
+#search-button {
+  margin-left: 10px;
+}
+
+.content-wrapper {
+  overflow-y: scroll;
+  height: 100vh;
+}
+ `;
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
+    <div class="content-wrapper">
+        <header>
+          <div class="logo">Penn State Digital Badges</div>
+        </header>
+      <div class="explore-container">
+        <h1>Explore</h1>
+      <div class="search-container">
+        <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
+          <div class="input-container">
+        <input type="text" id="search-input" placeholder="Search Content, Topics, and People">
+        <button id="search-button">Search</button>
+        </div>
+      </div>
+      <br>
+      <div class="badges-container">
+      </div>
+      </div>
+  </div>
 
-        <p>Edit <code>src/ProjectAgain.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
 
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }
