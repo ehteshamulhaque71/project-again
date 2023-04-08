@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-
+import "./edu-badge.js"
 
 export class ProjectAgain extends LitElement {
   static get properties() {
@@ -136,6 +136,14 @@ header {
   overflow-y: scroll;
   height: 100vh;
 }
+
+.wrapper {
+            border: 2px solid black;
+            display: flex;
+        }
+        .item {
+            display: inline-flex;
+        }
  `;
 
   render() {
@@ -154,8 +162,6 @@ header {
         </div>
       </div>
       <br>
-      <div class="badges-container">
-      </div>
       </div>
   </div>
 

@@ -74,7 +74,6 @@ export class EduBadge extends LitElement {
  
 }
 .title {
-
   margin-left: 10px;
   margin-bottom: 20px;
   font-size: 30px;
@@ -139,12 +138,12 @@ export class EduBadge extends LitElement {
 
   render() {
     return html`
-    <div class = "wrapper">   
+    <div class= "wrapper">   
                     <div class="image">
-                        <img src=${this.image} class= "book-image">
+                        <img  class= "book-image" src=${this.image}>
                     </div>
                      <br>
-                    <div class= "creator">
+                    <div class= "text">
                         Badge Creator: ${this.creator}
                     </div>
                     <div class= "author">
@@ -152,6 +151,9 @@ export class EduBadge extends LitElement {
                     </div>
                     <div class="title">
                         Author Name: ${this.name}
+                    </div>
+                    <div class="data">
+                        <div class="content"></div>
                     </div>
             </div>
         </div>
