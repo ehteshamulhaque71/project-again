@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import "./edu-badge.js"
 
+
 export class ProjectAgain extends LitElement {
   static get properties() {
     return {
@@ -26,16 +27,6 @@ export class ProjectAgain extends LitElement {
   
 }
 
-.badges-container {
-  background-color: #f2f2f2;
-	padding: 100px;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-
-}
 
 .explore-container {
   width: 100%;
@@ -71,12 +62,6 @@ export class ProjectAgain extends LitElement {
 	border: none;
 	cursor: pointer;
 	font-size: 16px;
-}
-
-.badges-container {
-	display: flex;
-	padding: 20px;
-  margin: auto;
 }
 
 .badge {
@@ -162,6 +147,8 @@ header {
         </div>
       </div>
       <br>
+      <div class="badges-container">
+      </div>
       </div>
   </div>
 
