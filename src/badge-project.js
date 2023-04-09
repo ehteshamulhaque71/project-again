@@ -47,16 +47,17 @@ export class BadgeProject extends LitElement {
       }
       return [];
     })
-    .then((data) => {
-      return data;
-    });
+      .then((data) => {
+        return data;
+      });
     return results;
   }
 
   async _handleSearchEvent(e) {
     const term = e.detail.value;
+    console.log(term);
     this.badges = await this.getSearchResults(term);
-    
+
   }
 
   render() {

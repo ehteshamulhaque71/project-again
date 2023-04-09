@@ -1,17 +1,18 @@
 import { LitElement, html, css } from 'lit';
-import "./edu-badge.js"
+import "./badge-project.js"
+// import "./search-widget.js"
 
 
 export class ProjectAgain extends LitElement {
   static get properties() {
     return {
-      header: {type: String},
-      name: {type: String},
-      creator: {type: String},
-      department: {type: String},
-      image: {type: String},
+      header: { type: String },
+      name: { type: String },
+      creator: { type: String },
+      department: { type: String },
+      image: { type: String },
     }
-  
+
   }
 
   static styles = css`
@@ -103,11 +104,6 @@ header {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-}
-
 #search-input {
   margin-right: 10px;
   width: calc(100% - 120px);
@@ -139,20 +135,23 @@ header {
         </header>
       <div class="explore-container">
         <h1>Explore</h1>
-      <div class="search-container">
-        <div class="search-text">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.</div>
-          <div class="input-container">
-        <input type="text" id="search-input" placeholder="Search Content, Topics, and People">
-        <button id="search-button">Search</button>
+        <div class="search-container">
+          <div class="search-text">
+            Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
+          </div>
+          <!-- <div class="input-container">
+            <input type="text" id="search-input" placeholder="Search Content, Topics, and People">
+            <button id="search-button">Search</button>
+            
+          </div> -->
+          <!-- <search-widget></search-widget>  -->
+        </div>
+        <br>
+        <div class="badges-container">
+          <badge-project></badge-project>
         </div>
       </div>
-      <br>
-      <div class="badges-container">
-      </div>
-      </div>
-  </div>
-
-
+    </div>
     `;
   }
 }
